@@ -1,0 +1,14 @@
+#del,
+#upd {
+    border-style: none;
+    border-radius: 100%;
+    margin-left: 1em;
+}
+
+#content {
+    padding-top: 5%;
+}
+
+.card{
+	border-style: none;
+}

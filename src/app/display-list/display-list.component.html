@@ -1,0 +1,29 @@
+<div id="content" class="container">
+        <div class="">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-group clearfix">
+                <label class="text-uppercase">New message:</label>
+                <input type="text" name="newMess" value="Your message" ngModel class="form-control">
+                <button class="btn btn-success btn-rounded float-right my-3"><i class="text-dark rounded-circle bg-white mr-1" style="padding: 5px;">✔</i>Send</button>
+            </form>
+            <ul class="alert alert-success">
+                <li *ngFor = ' let mess of messageList' class="my-3 mx-auto">
+                    {{ mess.message }}
+                    <button id="upd" (click)="showUpdateForm(mess)" class="btn btn-warning text-uppercase text-white ">Δ</button>
+                    <button id="del" (click)="onDelete(mess)" class="btn btn-danger text-uppercase text-white ">x</button>
+                </li>
+            </ul>
+        </div>
+    <hr>
+    <!-- hide/show when cklick onUpdate(mess) -->
+        <div class="">
+            <form *ngIf="isVisible" #form="ngForm" (ngSubmit)="onUpdate(form)">
+                <h5>Update element</h5>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-12"><input type="text" name="newMess"  class="form-control" placeholder="Date" ngModel></div>
+                    </div>
+                    <button class="btn btn-success btn-rounded float-right my-3"><i class="fa fa-check text-dark rounded-circle bg-white mr-1" style="padding: 5px;">✔</i>Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
